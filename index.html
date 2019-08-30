@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Js</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <!-- <div id="app">
+        <input type="text" v-on:input="changeName">
+        <p>{{name}}</p>
+        <p>{{whatsmyname()}} <a v-bind:href="link">Google</a></p>
+    </div>
+     -->
+    <div id="exercise">
+        <p>VueJs is Pretty Cool - {{name}} {{age}}</p>
+        <!-- Showing Name and Age-->
+        <hr>
+        <p>{{age * 3}}</p>
+        <hr>
+        <p>{{random()}}</p>
+        <hr>
+        <div>
+            <img v-bind:src="image" height="480px" width="920px">
+        </div>
+        <hr>
+        <input type="text" v-bind:value="name">
+    </div>
+</body>
+
+<script>
+
+
+new Vue({
+
+ el:'#exercise',
+ data:{
+     name:'Kush',
+     age: 23,
+     image:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/A_view_of_New_York_City_with_the_Empire_State_Building_and_One_World_Trade_Center_from_the_Rockefeller_Center.jpg/1920px-A_view_of_New_York_City_with_the_Empire_State_Building_and_One_World_Trade_Center_from_the_Rockefeller_Center.jpg'
+ },
+ methods:{
+     random:function(){
+         return Math.random();
+     }
+ }
+});
+
+
+
+new Vue({
+
+el:'#app',
+data:{
+    name: 'Kush',
+    link:"http://google.com"
+},
+methods:{
+    changeName: function(event){
+        this.name = event.target.value;
+    },
+    whatsmyname: function(){
+        return this.name;
+    }
+
+}
+});
+</script>
+</html>
